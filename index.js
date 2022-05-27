@@ -112,7 +112,6 @@ function makeTfidf(filelocation, i){
 // extract tf_idf_mod - from clicktype/tf_idf_mod.txt - precomputed mod of tf_idf arrays
 function makeTfidfMod(clicktype){
   return new Promise(function(resolve, reject) {
-    console.log(clicktype);
     let myReadstream = fs.createReadStream('public/'+clicktype+'/tf_idf_mod.txt', 'utf8');
     myReadstream.on('data', function(chunk){
       let modValues = chunk.split('\n');
@@ -270,34 +269,29 @@ app.post("/", function(request, response){
   let s = '';
   let btn;
   if(request.body.codeChef){
-    console.log("CodeChef");
     s = 'codechef_only_query';
     run(s);
     queryString = request.body.codeChef;
     btn = 1;
   }
   else if(request.body.codeforces){
-    console.log("Codeforces");
     s = 'codeforces_only_query';
     run(s);
     queryString = request.body.codeforces;
     btn = 2;
   }
   else if(request.body.all){
-    console.log("All");
     queryString = request.body.all;
     s = 'all_search_query';
     run(s);
     btn = 0;
   }
   else{
-    console.log("Homepage or above bar query");
     queryString = request.body.query;
     btn = 0;
     s = 'all_search_query';
     run(s);
   }
-  console.log(queryString);
 });
 
 app.listen(port, function(){
