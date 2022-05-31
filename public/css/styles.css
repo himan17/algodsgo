@@ -23,8 +23,7 @@ h2 {
   text-align: center;
   font-weight: 400;
   font-size: 1.25em;
-  letter-spacing: -0.015em;
-  opacity: 0.8;
+  opacity: 0.6;
   filter:(opacity=50);
 }
 /* index.html css */
@@ -32,7 +31,7 @@ h2 {
   background-image: linear-gradient(to top, #3176A1 0%, #330867 100%);
 }
 .container {
-  margin: 8% 10% 0 10%;
+  margin: 6% 10% 0 10%;
 }
 /* --  navbar */
 .navbar{
@@ -56,6 +55,14 @@ h2 {
   text-transform: uppercase;
   letter-spacing: +1.3px;
   margin-bottom: 1rem;
+}
+/* Changing Animation */
+#changing {
+  display: inline;
+}
+
+#changing2 {
+  display: inline;
 }
  /* -- Search bar  */
 .searchBar {

@@ -33,7 +33,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo01">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item me-auto">
-            <a class="nav-link mr-4"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a class="nav-link mr-4" href="https://github.com/himan17/algodsgo"><i class="fa-brands fa-github"></i> GitHub</a>
           </li>
         </ul>
       </div>
@@ -44,6 +44,7 @@
     <div class="row">
       <div class="col">
         <h2>One place for all algo-ds problems!</h2>
+        <h2>Search among <p id = "changing"></p>+ CodeChef and <p id="changing2"></p>+ Codeforces Problems.</h2>
         <div class="wrapper">
           <div>
             <form action="/" class="searchBar" method="post">
@@ -63,6 +64,26 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", () => {
+    function counter(id, start, end, duration) {
+    let obj = document.getElementById(id),
+     current = start,
+     range = end - start,
+     increment = end > start ? 1 : -1,
+     step = Math.abs(Math.floor(duration / range)),
+     timer = setInterval(() => {
+      current += increment;
+      obj.textContent = current;
+      if (current == end) {
+       clearInterval(timer);
+      }
+     }, step);
+    }
+    counter("changing", 0, 400, 1000);
+    counter("changing2", 0, 900, 800);
+});
+  </script>
 </body>
 
 </html>
